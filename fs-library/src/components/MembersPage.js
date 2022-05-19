@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Modal, Button, InputGroup, Form } from "react-bootstrap";
+
 import memberStore from "../stores/MemberStore";
 import MemberList from "./MemberList";
 import CreateMemberModal from "./CreateMemberModal";
@@ -10,11 +12,12 @@ function MembersPage() {
 
   const openModal = () => setIsOpen(true);
   return (
-    <div>
+    <div class="memberPage">
       <center>
+        <h1>LB Library Members</h1>
         <MemberList />
-        <button>
-          <span onClick={openModal}>New Member</span>
+        <button class="addMember-btn">
+          <span onClick={openModal}> + </span>
           <CreateMemberModal isOpen={isOpen} closeModal={closeModal} />
         </button>
       </center>

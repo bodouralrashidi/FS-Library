@@ -24,9 +24,22 @@ class MemberStore {
 
   //getting error 500
   AddMember = async (member) => {
-    // room.id = this.rooms[this.rooms.length - 1].id + 1;
-    member.slug = slugify(member.firstName + member.lastName);
-    console.log("slug" + member.slug);
+    function makeid() {
+      var text = "";
+      var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+      for (var i = 0; i < 24; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+      return text;
+    }
+
+    let id = makeid();
+    member._id = id;
+    let memberName = `${member.firstName} ${member.lastName}`;
+    member.slug = slugify(memberName, { delimiter: "-" });
+    console.log("slugggg " + member.slug);
+
     this.members.push(member);
     // if (member.membership == "") {
     //   member.membership = "silver";

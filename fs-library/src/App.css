@@ -1,3 +1,14 @@
+.memberPage{
+
+}
+.addMember-btn{
+  position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.nav{
+  background-color: rgb(223, 255, 198);
+}
 .memberInfo{
   background-color: rgb(255, 243, 176);
   width: 200px;
@@ -9,6 +20,31 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+}
+.modal-content{
+  width: 500px;
+  height: 200px;
+  background-color:rgb(232, 255, 253);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10%;
+
+}
+.modal-header{
+  display: flex;
+  align-content: space-between;
+}
+.modal-dialog{
+  display: flex;
+    justify-content: center;
+}
+.btn-close{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  left:80px;
 }
 
 .noMargin{
