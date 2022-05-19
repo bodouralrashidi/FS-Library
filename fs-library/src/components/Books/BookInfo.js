@@ -16,7 +16,8 @@ function BookInfo(props) {
       <div class="memberInfo">
         <h4 class="noMargin">{book.title}</h4>
         <h5 class="noMargin"> {book.author}</h5>
-     {/* <img src={book.image} /> */}
+
+        {/* <img src={book.image} /> */}
         {genres}
       </div>
     </Link>

@@ -1,13 +1,62 @@
-.memberPage{
+/* .memberPage{
 
+} */
+/* .genre{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+    position: relative;
+    left: 60px;
+    margin-bottom: 2px;
+ 
+    font-size: 10px;
+    width: 40px;
+    height: 15px;
+    background-color: rgb(255, 213, 0);
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+} */
+.dropdown{
+height: 30px;
+border-radius: 50px;
+border-style:outset;
+border-width: 2px;
+border-color: rgb(107, 22, 193);
 }
+.search{
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 50px;
+  border-width: 2px;
+  border-style:outset;
+  border-color:rgb(107, 22, 193);
+
+  }
 .addMember-btn{
   position: fixed;
     bottom: 20px;
     right: 20px;
 }
 .nav{
-  background-color: rgb(223, 255, 198);
+  background-color: rgb(31, 5, 48);
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+align-items: center;
+font-size: 20px;
+
+}
+.navbar-item{
+  margin-right: 10px;
+  font-weight: bolder;
+
+  
+}
+.a{
+  color: white;
 }
 .memberInfo{
   background-color: rgb(255, 243, 176);
