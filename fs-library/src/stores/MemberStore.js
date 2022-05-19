@@ -1,12 +1,14 @@
 import axios from "axios";
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, observable, action } from "mobx";
 import slugify from "react-slugify";
 
 class MemberStore {
   members = [];
 
   constructor() {
-    makeAutoObservable(this);
+    makeAutoObservable(this,{
+      AddMember: action,
+    });
   }
 
   fetchMembers = async () => {
@@ -24,10 +26,14 @@ class MemberStore {
 
   //getting error 500
   AddMember = async (member) => {
-    // room.id = this.rooms[this.rooms.length - 1].id + 1;
-    member.slug = slugify(member.firstName + member.lastName);
-    console.log("slug" + member.slug);
+    console.log("add member", member);
+   member._id = this.members[this.members.length - 1].id + 1;
+   console.log("member id",member._id)
+   
+   member.slug = slugify(member.firstName +"-"+ member.lastName);
+    console.log("slug:" + member.slug);
     this.members.push(member);
+    console.log("add member", member);
     // if (member.membership == "") {
     //   member.membership = "silver";
     // }
