@@ -6,7 +6,7 @@ class MemberStore {
   members = [];
 
   constructor() {
-    makeAutoObservable(this,{
+    makeAutoObservable(this, {
       AddMember: action,
     });
   }
@@ -26,31 +26,12 @@ class MemberStore {
 
   //getting error 500
   AddMember = async (member) => {
-<<<<<<< HEAD
-    function makeid() {
-      var text = "";
-      var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
-
-      for (var i = 0; i < 24; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-      return text;
-    }
-
-    let id = makeid();
-    member._id = id;
-    let memberName = `${member.firstName} ${member.lastName}`;
-    member.slug = slugify(memberName, { delimiter: "-" });
-    console.log("slugggg " + member.slug);
-
-=======
     console.log("add member", member);
-   member._id = this.members[this.members.length - 1].id + 1;
-   console.log("member id",member._id)
-   
-   member.slug = slugify(member.firstName +"-"+ member.lastName);
+    member._id = this.members[this.members.length - 1].id + 1;
+    console.log("member id", member._id);
+
+    member.slug = slugify(member.firstName + "-" + member.lastName);
     console.log("slug:" + member.slug);
->>>>>>> f2be81b3d8b2c870d9dd9ab5a3e3868bdf3e241f
     this.members.push(member);
     console.log("add member", member);
     // if (member.membership == "") {
