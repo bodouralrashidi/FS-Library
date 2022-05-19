@@ -1,6 +1,6 @@
 import React from "react";
-import memberStore from "../stores/MemberStore";
-import "../App.css";
+import memberStore from "../../stores/MemberStore";
+import "../../App.css";
 import { Link } from "react-router-dom";
 
 function MemberInfo(props) {

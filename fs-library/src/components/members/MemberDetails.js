@@ -1,5 +1,5 @@
 import React from "react";
-import memberStore from "../stores/MemberStore";
+import memberStore from "../../stores/MemberStore";
 import { useParams, Navigate } from "react-router-dom";
 
 function MemberDetails() {

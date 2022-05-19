@@ -1,22 +1,25 @@
 import { Modal, Button, InputGroup, Form } from "react-bootstrap";
 import React, { useState } from "react";
-import memberStore from "../stores/MemberStore";
+import bookStore from "../../stores/BookStore";
 
-function CreateMemberModal(props) {
-  const [member, setMember] = useState({
+function AddBookModal(props) {
+  const [book, setBook] = useState({
     _id: "",
-    firstName: "",
-    lastName: "",
-    membership: "silver",
-    currentlyBorrowedBooks: [],
+    author: "",
+    title: "",
+    genres: [],
+    available: true,
+    borrowedBy: [],
     slug: "",
+    image:
+      "",
   });
   const handleChange = (event) => {
-    setMember({ ...member, [event.target.name]: event.target.value });
+    setBook({ ...book, [event.target.name]: event.target.value });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    memberStore.AddMember(member);
+   bookStore.AddBook(book);
     props.closeModal();
   };
   return (
@@ -28,33 +31,33 @@ function CreateMemberModal(props) {
         onHide={props.closeModal}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Create a member</Modal.Title>
+          <Modal.Title>Create a Book</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <InputGroup>
-              <InputGroup.Text>First Name</InputGroup.Text>
+              <InputGroup.Text>Book Title</InputGroup.Text>
               <Form.Control
                 type="text"
-                name="firstName"
+                name="title"
                 onChange={handleChange}
               />
             </InputGroup>
             <br />
             <InputGroup>
-              <InputGroup.Text>Last Name</InputGroup.Text>
+              <InputGroup.Text>author</InputGroup.Text>
               <Form.Control
                 type="text"
-                name="lastName"
+                name="Author"
                 onChange={handleChange}
               />
             </InputGroup>
             <br />
             <InputGroup>
-              <InputGroup.Text>Membership</InputGroup.Text>
+              <InputGroup.Text>genres</InputGroup.Text>
               <Form.Control
                 type="text"
-                name="membership"
+                name="genres"
                 onChange={handleChange}
               />
             </InputGroup>

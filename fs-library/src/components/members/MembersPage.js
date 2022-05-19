@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Modal, Button, InputGroup, Form } from "react-bootstrap";
 
-import memberStore from "../stores/MemberStore";
+import memberStore from "../../stores/MemberStore";
 import MemberList from "./MemberList";
 import CreateMemberModal from "./CreateMemberModal";
 

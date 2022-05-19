@@ -1,5 +1,5 @@
 import React from "react";
-import memberStore from "../stores/MemberStore";
+import memberStore from "../../stores/MemberStore";
 import MemberInfo from "./MemberInfo";
 import { observer } from "mobx-react";
 

@@ -26,24 +26,16 @@ class MemberStore {
 
   //getting error 500
   AddMember = async (member) => {
-    console.log("add member", member);
     member._id = this.members[this.members.length - 1].id + 1;
-    console.log("member id", member._id);
-
-    member.slug = slugify(member.firstName + "-" + member.lastName);
-    console.log("slug:" + member.slug);
+    const currentMember = member.firstName + " " + member.lastName;
+   member.slug = slugify(currentMember, {delimiter : "-"});
     this.members.push(member);
-    console.log("add member", member);
-    // if (member.membership == "") {
-    //   member.membership = "silver";
-    // }
+    //console.log("add member", member);
+   
     try {
-      const response = await axios.post(
-        "https://library-borrow-system.herokuapp.com/api/members",
-        member
-      );
-      console.log("Dataaa" + response.data);
-      // this.rooms.push(response.data);
+      const response = await axios.post("https://library-borrow-system.herokuapp.com/api/members", member);
+    console.log("Dataaa" + response.data);
+      this.rooms.push(response.data);
     } catch (error) {
       console.error("ERORRRRRRR" + error);
     }
