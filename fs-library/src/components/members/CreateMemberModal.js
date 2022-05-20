@@ -1,6 +1,7 @@
 import { Modal, Button, InputGroup, Form } from "react-bootstrap";
 import React, { useState } from "react";
 import memberStore from "../../stores/MemberStore";
+// import { Modal, Button} from "react-bootstrap";
 
 function CreateMemberModal(props) {
   const [member, setMember] = useState({
@@ -26,9 +27,12 @@ function CreateMemberModal(props) {
         centered
         show={props.isOpen}
         onHide={props.closeModal}
+        style={{ backgroundColor: "rgba(118, 120, 237, 0.3)" }}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Create a member</Modal.Title>
+          <Modal.Title style={{ color: "#7678ED" }}>
+            Create a member
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -56,12 +60,17 @@ function CreateMemberModal(props) {
                 type="text"
                 name="membership"
                 onChange={handleChange}
+                placeholder="silver , gold , or platinum"
               />
             </InputGroup>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleSubmit}>
+          {/* variant="primary" */}
+          <Button
+            style={{ backgroundColor: "#FFC300", border: "0" }}
+            onClick={handleSubmit}
+          >
             Add Member
           </Button>
         </Modal.Footer>

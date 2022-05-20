@@ -4,18 +4,37 @@ import { NavLink } from "react-router-dom";
 function Nav() {
   return (
     <nav>
-      <div class="nav">
-        <div class="navbar-item">
-          <NavLink to="/">BN Library</NavLink>
+      <div className="nav">
+        <div>
+          <NavLink
+            style={{
+              textDecoration: "none",
+              color: "#3D348B",
+              fontWeight: "bold",
+              fontSize: "30px",
+              marginRight: "50px",
+              marginLeft: "20px",
+              fontFamily: "",
+            }}
+            to="/"
+          >
+            Rkive
+          </NavLink>
         </div>
-        <div class="navbar-item">
-          <NavLink to="/">Home</NavLink>
+        <div>
+          <NavLink className="navitem" to="/">
+            Home
+          </NavLink>
         </div>
-        <div class="navbar-item">
-          <NavLink to="/members-page">Members</NavLink>
+        <div>
+          <NavLink className="navitem" to="/members-page">
+            Members
+          </NavLink>
         </div>
-        <div class="navbar-item">
-          <NavLink to="/books-page">Books</NavLink>
+        <div>
+          <NavLink className="navitem" to="/books-page">
+            Books
+          </NavLink>
         </div>
       </div>
     </nav>

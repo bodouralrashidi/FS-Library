@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import MemberDetails from "./components/members/MemberDetails";
 import BooksPage from "./components/Books/BooksPage";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

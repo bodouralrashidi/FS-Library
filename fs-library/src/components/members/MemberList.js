@@ -9,7 +9,7 @@ function MemberList() {
   });
 
   return (
-    <div>
+    <div class="memberListContainer">
       <div class="MembersList">{membersList} </div>
     </div>
   );

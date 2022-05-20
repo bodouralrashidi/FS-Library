@@ -12,7 +12,7 @@ function BooksPage() {
   return (
     <div class="memberPage">
       <center>
-        <h1>LB Library Book</h1>
+        <h1>Rkive Library Book</h1>
         <BookList />
         {/* <button class="addMember-btn">
           <span onClick={openModal}> + </span>

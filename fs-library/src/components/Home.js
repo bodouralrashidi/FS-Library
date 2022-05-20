@@ -1,4 +1,5 @@
 import React from "react";
+import { Modal, Button } from "react-bootstrap";
 
 function Home() {
   return (
