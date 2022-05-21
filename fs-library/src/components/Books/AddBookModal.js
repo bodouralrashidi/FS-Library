@@ -76,7 +76,7 @@ function AddBookModal(props) {
         onHide={props.closeModal}
         style={{ backgroundColor: "rgba(118, 120, 237, 0.3)" }}
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton >
           <Modal.Title>Create a Book</Modal.Title>
         </Modal.Header>
         <Modal.Body>

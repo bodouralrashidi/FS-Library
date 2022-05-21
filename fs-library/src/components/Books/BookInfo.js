@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function BookInfo(props) {
   const book = props.book;
-
+  
   const genres = () => {
     book.genres.forEach((element) => {
       <div>{element}</div>;
@@ -12,6 +12,7 @@ function BookInfo(props) {
   };
 
   return (
+
     <Link
       style={{
         textDecoration: "none",
@@ -19,6 +20,7 @@ function BookInfo(props) {
       to={`/book-detail/${book.slug}`}
     >
       <div class="BookInfo">
+ 
         <img
           style={{ width: "150px", height: "200px", marginTop: "20px" }}
           src={book.image}
@@ -35,7 +37,7 @@ function BookInfo(props) {
           {book.title}
         </h6>
         {/* <h5 class="noMargin"> {book.author}</h5> */}
-
+        
         {genres}
       </div>
     </Link>

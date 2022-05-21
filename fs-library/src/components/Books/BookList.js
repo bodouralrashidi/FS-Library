@@ -26,7 +26,7 @@ function BookList() {
     <div>
       <div
         class="search-filter"
-        style={{ position: "relative", right: "350px", marginTop: "30px" }}
+        
       >
         <div class="genre"></div>
         <input
@@ -55,14 +55,16 @@ function BookList() {
           <option value="Thriller">Thriller</option>
         </select>
 
-        <button class="addBook-btn">
-          <span onClick={openModal}> Add Book </span>
+        <button class="addMember-btn">
+        <span onClick={openModal}> + </span>
           <AddBookModal isOpen={isOpen} closeModal={closeModal}/>
+      
+      
         </button>
       
       
       </div>
-
+ 
       <div class="Bookslistcontainer">{booksList} </div>
     </div>
   );

@@ -14,8 +14,8 @@ function BooksPage() {
   return (
     <div class="bookPage">
       <center>
-        <h1 style={{ color: "#7678ED" }}>شنو نكتب اهني</h1>
-        <h1>Archive Library Book</h1>
+        <h1 style={{ color: "#7678ED" }}> Archive Library   </h1>
+      
         
         <BookList />
         

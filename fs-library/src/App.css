@@ -164,7 +164,12 @@ margin-top: 30px;
   flex-direction: column;
   align-items: flex-start;
 }
-.genre {
+.genreBorder {
+  display:inline;
+  border-radius: 20px;
+background-color: #ffc300;
+
+
 }
 .addBook-btn {
   padding: 10px;
@@ -177,27 +182,22 @@ margin-top: 30px;
   border-color: #ffc300;
   cursor: pointer;
 }
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-/* .memberPage{
+}
 
-} */
-/* .genre{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    
-    position: relative;
-    left: 60px;
-    margin-bottom: 2px;
- 
-    font-size: 10px;
-    width: 40px;
-    height: 15px;
-    background-color: rgb(255, 213, 0);
-    border-radius: 5px;
-    font-weight: bold;
-    color: white;
-} */
+.imgwrap {
+  display: block;
+  width: 50%;
+  max-width: 500px; /*actual image width*/
+  height: auto; /* maintain aspect ratio*/
+  margin: auto; /*optional centering of image*/
+}
+
+
 .dropdown {
   height: 30px;
   border-radius: 50px;
@@ -219,16 +219,18 @@ margin-top: 30px;
 }
 .addMember-btn {
   position: fixed;
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   bottom: 20px;
   right: 13px;
+ 
   background-color: #ffc300;
   /* border-width: 0px; */
-  border-radius: 5px;
+  border-radius:100%;
   border-style: groove;
   color: white;
-  font-size: larger;
+  font-size: xx-large;
+  font-weight: bolder;
   border-color: #ffc300;
   cursor: pointer;
 }
