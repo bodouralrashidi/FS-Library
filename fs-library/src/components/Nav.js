@@ -18,7 +18,7 @@ function Nav() {
             }}
             to="/"
           >
-            Rkive
+            Archive
           </NavLink>
         </div>
         <div>

@@ -8,6 +8,7 @@ import MemberDetails from "./components/members/MemberDetails";
 import BooksPage from "./components/Books/BooksPage";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
+
 function App() {
   return (
     <div>
@@ -22,6 +23,7 @@ function App() {
         />
         {/* <Route path={"/book-detail/:bookSlug"} element={<BookDetails />} /> */}
       </Routes>
+      
     </div>
   );
 }
