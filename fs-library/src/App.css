@@ -2,6 +2,48 @@
   display: flex;
 
 }
+.BookInfo{
+  background-color: #ffffff;
+  box-shadow: -1px 0px 15px 5px rgba(235,235,235,0.86);
+  width: 200px;
+  height: 300px;
+  margin-top:30px;
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.bookPage{
+background-color: #f1f1f1;
+border-radius: 10px;
+margin-left: 20px;
+margin-right: 20px;
+padding-top:30px;
+margin-top: 30px;
+}
+.borrowedBooksContainer{
+
+  margin: 10px;
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+  grid-template-columns: auto auto auto auto;
+  row-gap: 20px;
+  column-gap: 90px;
+}
+.Bookslistcontainer{
+  /* background-color: #ffc4003b; */
+  margin-top:10px;
+  margin-right:20px;
+  margin-left:20px;
+  /* margin: 10px; */
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+  grid-template-columns: auto auto auto auto;
+  row-gap: 30px;
+  column-gap: 90px;
+  border-radius: 10px;
+}
 
 .nameContainer{
 width:250px;
@@ -158,6 +200,7 @@ border-color: rgb(107, 22, 193);
   margin-right: 10px;
 }
 .search{
+  width:300px;
   height: 30px;
   margin-right: 20px;
   border-radius: 50px;
@@ -183,7 +226,7 @@ border-color: rgb(107, 22, 193);
 
 }
 .nav{
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(247, 247, 247);
   height: 70px;
   padding: 10px;
   display: flex;
@@ -249,6 +292,7 @@ font-size: 20px;
 
 .noMargin{
   margin: 0px;
+  text-decoration:none;
 }
 
 .MembersList{

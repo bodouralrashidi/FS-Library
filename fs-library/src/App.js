@@ -20,6 +20,7 @@ function App() {
           path={"/member-detail/:memberSlug"}
           element={<MemberDetails />}
         />
+        {/* <Route path={"/book-detail/:bookSlug"} element={<BookDetails />} /> */}
       </Routes>
     </div>
   );

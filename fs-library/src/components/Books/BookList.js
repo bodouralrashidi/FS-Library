@@ -17,8 +17,11 @@ function BookList() {
 
   return (
     <div>
-      <div class="search-filter">
-        <div class="genre">Genre</div>
+      <div
+        class="search-filter"
+        style={{ position: "relative", right: "350px", marginTop: "30px" }}
+      >
+        <div class="genre"></div>
         <input
           type="search"
           class="search"
@@ -30,7 +33,7 @@ function BookList() {
           <option value="" selected>
             All
           </option>
-          <option value="Elif Shafak">Elif Shafak</option>
+          <option value="Action">Action</option>
           <option value="Biography">Biography</option>
           <option value="Business">Business</option>
           <option value="Crime">Crime</option>
@@ -46,7 +49,7 @@ function BookList() {
         </select>
       </div>
 
-      <div class="MembersList">{booksList} </div>
+      <div class="Bookslistcontainer">{booksList} </div>
     </div>
   );
 }

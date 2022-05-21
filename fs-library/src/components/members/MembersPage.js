@@ -14,7 +14,9 @@ function MembersPage() {
   return (
     <div class="memberPage">
       <center>
-        <h1 style={{ color: "#7678ED" }}>Rkive Library Members</h1>
+        <h1 style={{ color: "#7678ED", marginTop: "30px" }}>
+          Rkive Library Members
+        </h1>
         <MemberList />
         <button class="addMember-btn">
           <span onClick={openModal}> + </span>

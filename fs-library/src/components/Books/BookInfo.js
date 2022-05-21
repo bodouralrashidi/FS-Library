@@ -12,12 +12,30 @@ function BookInfo(props) {
   };
 
   return (
-    <Link to={`/member-detail/${book.slug}`}>
-      <div class="memberInfo">
-        <h4 class="noMargin">{book.title}</h4>
-        <h5 class="noMargin"> {book.author}</h5>
+    <Link
+      style={{
+        textDecoration: "none",
+      }}
+      to={`/book-detail/${book.slug}`}
+    >
+      <div class="BookInfo">
+        <img
+          style={{ width: "150px", height: "200px", marginTop: "20px" }}
+          src={book.image}
+        />
+        <h6
+          style={{
+            textDecoration: "none",
+            color: "#FFC300",
+            fontWeight: "bold",
+            marginTop: "10px",
+          }}
+          className="noMargin"
+        >
+          {book.title}
+        </h6>
+        {/* <h5 class="noMargin"> {book.author}</h5> */}
 
-        {/* <img src={book.image} /> */}
         {genres}
       </div>
     </Link>

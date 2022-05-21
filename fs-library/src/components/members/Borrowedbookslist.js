@@ -22,7 +22,7 @@ function Borrowedbooklist(member) {
     return <BookItem book={book} key={book._id} />;
   });
 
-  return <div class="borrowedBooksContainer">{booklist} </div>;
+  return <div className="borrowedBooksContainer">{booklist} </div>;
 }
 
 export default Borrowedbooklist;

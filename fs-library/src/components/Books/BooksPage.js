@@ -4,15 +4,15 @@ import BookList from "./BookList";
 //import CreateMemberModal from "./CreateMemberModal";
 
 function BooksPage() {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
   //const closeModal = () => setIsOpen(false);
 
-  const openModal = () => setIsOpen(true);
+  // const openModal = () => setIsOpen(true);
   return (
-    <div class="memberPage">
+    <div class="bookPage">
       <center>
-        <h1>Rkive Library Book</h1>
+        <h1 style={{ color: "#7678ED" }}>شنو نكتب اهني</h1>
         <BookList />
         {/* <button class="addMember-btn">
           <span onClick={openModal}> + </span>
