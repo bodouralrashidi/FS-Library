@@ -209,12 +209,7 @@ margin-top: 30px;
   color: white;
   margin-right: 10px;
 }
-<<<<<<< HEAD
-.search{
-  width:300px;
-=======
 .search {
->>>>>>> 3468b61 (add button works)
   height: 30px;
   margin-right: 20px;
   border-radius: 50px;
@@ -237,13 +232,8 @@ margin-top: 30px;
   border-color: #ffc300;
   cursor: pointer;
 }
-<<<<<<< HEAD
-.nav{
-  background-color: rgb(247, 247, 247);
-=======
 .nav {
   background-color: rgb(255, 255, 255);
->>>>>>> 3468b61 (add button works)
   height: 70px;
   padding: 10px;
   display: flex;
