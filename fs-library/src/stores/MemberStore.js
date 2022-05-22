@@ -40,6 +40,21 @@ class MemberStore {
       console.error("ERORRRRRRR" + error);
     }
   };
+  update = (bookId, memberId ) => {
+    try {
+      // const member = this.members.find((i) => i.id === updated.id);
+      // member.title = updated.title;
+      // member.description = updated.description;
+      // member.image = update.image;
+      console.log("changed data ",bookId, memberId)
+      axios.put(
+        `https://library-borrow-system.herokuapp.com/api/books/${bookId}/borrow/${memberId}`
+       
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  };
 }
 
 const memberStore = new MemberStore();
