@@ -42,20 +42,42 @@ class MemberStore {
       console.error("ERORRRRRRR" + error);
     }
   };
-  update = (bookId, memberId ) => {
+  update = (bookId, memberId) => {
     try {
       // const member = this.members.find((i) => i.id === updated.id);
       // member.title = updated.title;
       // member.description = updated.description;
       // member.image = update.image;
-      console.log("changed data ",bookId, memberId)
+      console.log("changed data ", bookId, memberId);
       axios.put(
         `https://library-borrow-system.herokuapp.com/api/books/${bookId}/borrow/${memberId}`
-       
       );
     } catch (error) {
       console.error(error);
     }
+  };
+  returnbook = async (member, index, book) => {
+    console.log("member current books " + member.currentlyBorrowedBooks);
+
+    //to remove from the currently borrowed array
+    try {
+      const response = await axios.put(
+        `https://library-borrow-system.herokuapp.com/api/books/${book._id}/return/${member._id}`
+      );
+      member.currentlyBorrowedBooks.splice(index, 1);
+      console.log("Dataaa" + response.data);
+    } catch (error) {
+      console.error("ERORRRRRRR" + error);
+    }
+    // try {
+    //   const response = await axios.put(
+    //     `https://library-borrow-system.herokuapp.com/api/members`,
+    //     member
+    //   );
+    //   console.log("Dataaa" + response.data);
+    // } catch (error) {
+    //   console.error("ERORRRRRRR" + error);
+    // }
   };
 }
 
