@@ -37,6 +37,16 @@ margin-right: 20px;
 padding-top:30px;
 margin-top: 30px;
 }
+.bookDetailsPage{
+  width: 50%;
+  height: 500px;;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top:30px;
+  margin-top: 30px;
+  }
 .borrowedBooksContainer{
 
   margin: 10px;
@@ -211,7 +221,7 @@ background-color: #ffc300;
 
 .imgwrap {
   display: block;
-  width: 200px;
+  width: 270px;
   height: auto; /* maintain aspect ratio*/
   margin: auto; /*optional centering of image*/
 }
