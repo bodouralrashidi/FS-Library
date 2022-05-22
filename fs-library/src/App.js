@@ -21,7 +21,11 @@ function App() {
           path={"/member-detail/:memberSlug"}
           element={<MemberDetails />}
         />
+<<<<<<< HEAD
         <Route path={"/book-detail/:bookSlug"} element={<BookDetails />} />
+=======
+       
+>>>>>>> 50130c456aeaddf90662995f05bd0f9760b09d1c
         {/* <Route path={"/book-detail/:bookSlug"} element={<BookDetails />} /> */}
       </Routes>
     </div>

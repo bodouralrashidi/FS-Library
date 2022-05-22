@@ -1,11 +1,13 @@
 import BookStore from "../../stores/BookStore";
+import MemberStore from "../../stores/MemberStore";
 import { useParams, Navigate } from "react-router-dom";
 import React, { useState } from "react";
 
-//import Borrowedbooklist from "./Borrowedbookslist";
+import { Link } from "react-router-dom";
 import BorrowModal from "../Borrow/BorrowModal";
+import { ColorExtractor } from  'react-color-extractor'
+
 function BookDetails() {
-  // const trip = tripsData[0];
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
@@ -14,27 +16,41 @@ function BookDetails() {
   const { bookSlug } = useParams();
 
   const book = BookStore.books.find((book) => book.slug === bookSlug);
-  const checkBook = {};
+  const previousBorrowedMembers = [];
+  const membersborrowed = ()=>
+  (
+    book.borrowedBy.map(id => { MemberStore.members.forEach(member => {
+      
+      if (member._id === id)
+      {
+        previousBorrowedMembers.push(member)
+        console.log(member,"member")
+      } 
+    });
 
+    })
+  )
   const genres = book.genres.map((element) => (
     <span className="center genreBorder" value={element}>
       {" "}
       {element}
     </span>
   ));
+  membersborrowed()
 
-  const isAvailable = () => {
-    if (book.isAvailable == true) {
-      console.log("eddd");
-    }
-  };
-
+  console.log(book.isAvailable, "tesst")
   //we put + before tripId in the following line to convert tripId from string to number
 
   console.log("member id consoled " + bookSlug);
   return (
-    <div className="center bookPage">
-      <div>
+    <div className="center">
+    <div className="center bookDetailsPage">
+    <img className="imgwrap" src={book.image} />
+
+{colour}
+   
+
+      <div style={{padding : "40px"}}>
         <h1
           style={{
             textDecoration: "none",
@@ -46,20 +62,28 @@ function BookDetails() {
         </h1>
         <h3>by {book.author}</h3>
 
-        <img className="imgwrap" src={book.image} />
-
+        {membersborrowed}
         <span>{genres}</span>
-
-        <button>
-          <span onClick={openModal}> Borrow book? </span>
-          <BorrowModal
-            isOpen={isOpen}
-            closeModal={closeModal}
-            bookid={book._id}
-            book={book}
-          />
-        </button>
+        {book.available ? (
+          <button>
+            <span onClick={openModal}> Borrow book? </span>
+            <BorrowModal
+              isOpen={isOpen}
+              closeModal={closeModal}
+              bookid={book._id}
+              book={book}
+            />
+          </button>
+         
+        ) : 
+        <Link  to={`/member-detail/${previousBorrowedMembers[previousBorrowedMembers.length -1].slug}`} >
+        <h4>borrowed by {previousBorrowedMembers[previousBorrowedMembers.length -1].firstName + " "+ previousBorrowedMembers[previousBorrowedMembers.length -1].lastName } </h4>
+        
+        </Link>
+        //http://localhost:3001/member-detail/bodour-alrashidiii
+        }
       </div>
+    </div>
     </div>
   );
 }
