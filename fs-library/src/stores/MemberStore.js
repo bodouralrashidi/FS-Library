@@ -69,15 +69,6 @@ class MemberStore {
     } catch (error) {
       console.error("ERORRRRRRR" + error);
     }
-    // try {
-    //   const response = await axios.put(
-    //     `https://library-borrow-system.herokuapp.com/api/members`,
-    //     member
-    //   );
-    //   console.log("Dataaa" + response.data);
-    // } catch (error) {
-    //   console.error("ERORRRRRRR" + error);
-    // }
   };
 }
 

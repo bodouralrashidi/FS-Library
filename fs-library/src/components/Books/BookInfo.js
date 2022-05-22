@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ReturnModal from "./ReturnModal";
 import { useState } from "react";
 import memberStore from "../../stores/MemberStore";
+import { observer } from "mobx-react";
 
 function BookInfo(props) {
   const book = props.book;
@@ -20,9 +21,10 @@ function BookInfo(props) {
       return "noDisplay";
     }
   };
-  let BorrowMemberid = book.borrowedBy[book.borrowedBy.length - 1];
 
   let borrowClass = checkborrow();
+  let BorrowMemberid = book.borrowedBy[book.borrowedBy.length - 1];
+
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
@@ -30,22 +32,22 @@ function BookInfo(props) {
   const openModal = () => setIsOpen(true);
   return (
     <div>
-      <div onClick={openModal} className={borrowClass}>
-        Return
-      </div>
-      <ReturnModal
-        isOpen={isOpen}
-        closeModal={closeModal}
-        BorrowMemberid={BorrowMemberid}
-        book={book}
-      />
-      <Link
-        style={{
-          textDecoration: "none",
-        }}
-        to={`/book-detail/${book.slug}`}
-      >
-        <div class="BookInfo">
+      <div class="BookInfo">
+        <div onClick={openModal} className={borrowClass}>
+          Return
+        </div>
+        <ReturnModal
+          isOpen={isOpen}
+          closeModal={closeModal}
+          BorrowMemberid={BorrowMemberid}
+          book={book}
+        />
+        <Link
+          style={{
+            textDecoration: "none",
+          }}
+          to={`/book-detail/${book.slug}`}
+        >
           <img
             style={{ width: "150px", height: "200px", marginTop: "20px" }}
             src={book.image}
@@ -56,6 +58,7 @@ function BookInfo(props) {
               color: "#FFC300",
               fontWeight: "bold",
               marginTop: "10px",
+              fontSize: "12px",
             }}
             className="noMargin"
           >
@@ -64,10 +67,10 @@ function BookInfo(props) {
           {/* <h5 class="noMargin"> {book.author}</h5> */}
 
           {genres}
-        </div>
-      </Link>
+        </Link>
+      </div>
     </div>
   );
 }
 
-export default BookInfo;
+export default observer(BookInfo);

@@ -7,7 +7,7 @@ import Home from "./components/Home";
 import MemberDetails from "./components/members/MemberDetails";
 import BooksPage from "./components/Books/BooksPage";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import BookDetails from "./components/Books/BookDetails"
+import BookDetails from "./components/Books/BookDetails";
 
 function App() {
   return (
@@ -20,16 +20,10 @@ function App() {
         <Route
           path={"/member-detail/:memberSlug"}
           element={<MemberDetails />}
-          
         />
-         <Route
-          path={"/book-detail/:bookSlug"}
-          element={<BookDetails />}
-          
-        />
+        <Route path={"/book-detail/:bookSlug"} element={<BookDetails />} />
         {/* <Route path={"/book-detail/:bookSlug"} element={<BookDetails />} /> */}
       </Routes>
-      
     </div>
   );
 }
