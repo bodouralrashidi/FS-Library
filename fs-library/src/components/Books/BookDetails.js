@@ -29,8 +29,9 @@ function BookDetails() {
     })
   )
   const genres = book.genres.map((element) => (
+  
     <span className="center genreBorder" value={element}>
-      {" "}
+    
       {element}
     </span>
   ));
@@ -44,9 +45,11 @@ console.log(previousBorrowedMembers)
   return (
     <div className="center">
     <div className="center bookDetailsPage">
+      <div style={{width: "50%"}}>
     <img className="imgwrap" src={book.image} />
+    </div>
 
-      <div style={{padding : "40px"}}>
+      <div style={{padding : "40px" ,width: "50%"}}>
         <h1
           style={{
             textDecoration: "none",
@@ -59,7 +62,7 @@ console.log(previousBorrowedMembers)
         <h3>by {book.author}</h3>
 
       
-        <span>{genres}</span>
+        <span className="gridGenre">{genres}</span>
         {(book.available  || previousBorrowedMembers.length<1) ? (
           <button>
             <span onClick={openModal}> Borrow book? </span>
@@ -71,8 +74,8 @@ console.log(previousBorrowedMembers)
             />
           </button>
          ): 
-       <Link  to={`/member-detail/${previousBorrowedMembers[previousBorrowedMembers.length -1].slug}`} >
-       <h4>borrowed by {previousBorrowedMembers[previousBorrowedMembers.length -1].firstName + " "+ previousBorrowedMembers[previousBorrowedMembers.length -1].lastName } </h4>
+       <Link  style={{textDecoration: "none", color: "black", backgroundColor: "White", borderRadius:"20px"}}  to={`/member-detail/${previousBorrowedMembers[previousBorrowedMembers.length -1].slug}`} >
+       <h5>Borrowed By {previousBorrowedMembers[previousBorrowedMembers.length -1].firstName + " "+ previousBorrowedMembers[previousBorrowedMembers.length -1].lastName } </h5>
         </Link>
 }
        

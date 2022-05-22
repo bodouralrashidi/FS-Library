@@ -21,7 +21,8 @@ function MemberDetails() {
   //for testing (worked)
   console.log("member id consoled " + memberSlug);
   return (
-    <div className="MemberDetailsPage" style={{ padding: "10px" }}>
+    <div className="">
+    <div className="MemberDetailsPage  " style={{ padding: "10px" , borderStyle: "solid", margin: "20px", borderRadius: "20px" ,}}>
       <div className={namecontainerClass}>
         <div className="initCircle">
           {member.firstName[0].toUpperCase()}
@@ -37,6 +38,7 @@ function MemberDetails() {
         <h2 style={{ color: "#FFC300" }}>Currently Borrowed Books</h2>
         <Borrowedbooklist member={member} />
       </div>
+    </div>
     </div>
   );
 }
