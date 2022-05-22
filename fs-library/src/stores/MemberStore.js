@@ -28,14 +28,16 @@ class MemberStore {
   AddMember = async (member) => {
     member._id = this.members[this.members.length - 1].id + 1;
     const currentMember = member.firstName + " " + member.lastName;
-   member.slug = slugify(currentMember, {delimiter : "-"});
+    member.slug = slugify(currentMember, { delimiter: "-" });
     this.members.push(member);
     //console.log("add member", member);
-   
+
     try {
-      const response = await axios.post("https://library-borrow-system.herokuapp.com/api/members", member);
-    console.log("Dataaa" + response.data);
-      this.rooms.push(response.data);
+      const response = await axios.post(
+        "https://library-borrow-system.herokuapp.com/api/members",
+        member
+      );
+      console.log("Dataaa" + response.data);
     } catch (error) {
       console.error("ERORRRRRRR" + error);
     }
