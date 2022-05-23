@@ -8,6 +8,7 @@ class BooksStore {
   constructor() {
     makeAutoObservable(this, {
       AddBook: action,
+      fetchBook:action,
     });
   }
 

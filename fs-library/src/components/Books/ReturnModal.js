@@ -2,6 +2,8 @@ import { Modal, Button, InputGroup, Form } from "react-bootstrap";
 import React, { useState } from "react";
 import memberStore from "../../stores/MemberStore";
 import axios from "axios";
+import { render } from "@testing-library/react";
+import bookStore from "../../stores/BookStore";
 
 function ReturnModal(props) {
   let BOOK = props.book;
@@ -19,9 +21,14 @@ function ReturnModal(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     memberStore.returnbook(MEMBER[0], index, BOOK);
+
+    console.log("BOOK" + Object.entries(BOOK));
+
     props.closeModal();
   };
+
   return (
     <div>
       <Modal

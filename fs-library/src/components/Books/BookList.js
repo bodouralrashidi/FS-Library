@@ -24,10 +24,7 @@ function BookList() {
 
   return (
     <div>
-      <div
-        class="search-filter"
-        
-      >
+      <div class="search-filter">
         <div class="genre"></div>
         <input
           type="search"
@@ -56,15 +53,11 @@ function BookList() {
         </select>
 
         <button class="addMember-btn">
-        <span onClick={openModal}> + </span>
-          <AddBookModal isOpen={isOpen} closeModal={closeModal}/>
-      
-      
+          <span onClick={openModal}> + </span>
+          <AddBookModal isOpen={isOpen} closeModal={closeModal} />
         </button>
-      
-      
       </div>
- 
+
       <div class="Bookslistcontainer">{booksList} </div>
     </div>
   );

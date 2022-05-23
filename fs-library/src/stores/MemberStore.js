@@ -8,6 +8,8 @@ class MemberStore {
   constructor() {
     makeAutoObservable(this, {
       AddMember: action,
+      update: action,
+      returnbook: action,
     });
   }
 
@@ -65,10 +67,11 @@ class MemberStore {
         `https://library-borrow-system.herokuapp.com/api/books/${book._id}/return/${member._id}`
       );
       member.currentlyBorrowedBooks.splice(index, 1);
-      console.log("Dataaa" + response.data);
+      console.log("Dataaa" + Object.entries(response.data));
     } catch (error) {
       console.error("ERORRRRRRR" + error);
     }
+    return book;
   };
 }
 

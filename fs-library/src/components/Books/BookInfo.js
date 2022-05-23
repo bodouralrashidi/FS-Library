@@ -7,7 +7,8 @@ import memberStore from "../../stores/MemberStore";
 import { observer } from "mobx-react";
 
 function BookInfo(props) {
-  const book = props.book;
+  const [book, setBook] = useState(props.book);
+  // const book = props.book;
 
   const genres = () => {
     book.genres.forEach((element) => {
