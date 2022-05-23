@@ -11,6 +11,7 @@ function ReturnModal(props) {
   let MEMBER = memberStore.members.filter(
     (member) => member._id == props.BorrowMemberid
   );
+  // console.log("MEMBER info " + { ...MEMBER[0] });
 
   let membername = "";
   let index = 0;

@@ -67,6 +67,9 @@ class MemberStore {
         `https://library-borrow-system.herokuapp.com/api/books/${book._id}/return/${member._id}`
       );
       member.currentlyBorrowedBooks.splice(index, 1);
+      // this.members.find(member).currentlyBorrowedBooks.splice(index, 1);
+      // console.log("member found in members", this.members.find(member));
+
       console.log("Dataaa" + Object.entries(response.data));
     } catch (error) {
       console.error("ERORRRRRRR" + error);
