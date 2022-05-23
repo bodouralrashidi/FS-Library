@@ -7,17 +7,17 @@ import memberStore from "../../stores/MemberStore";
 function BorrowedByList(props) {
   let noDuplications = [...new Set(props.firstNameBorrowedBy)];
   const dropListMember = noDuplications.map((element) => (
-    <option value={element}> {element}</option>
+    <div style={{ background : "white" , color : "black"}} value={element}> {element}
+    </div>
+   
   ));
 
   return (
-    <div>
-      <select class="dropdown">
-        <option value="" selected disapled hidden>
-          Borrowed By{" "}
-        </option>
+    <div className="center">
+      <div class="  scrollBorrow ">
+       
         {dropListMember}
-      </select>
+      </div>
     </div>
   );
 }

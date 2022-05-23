@@ -69,9 +69,14 @@ margin-top: 30px;
   }
 
   .scrollBorrow{
-  
+   border-radius: 5px;
     overflow: scroll;
-  
+    overflow-x: hidden;
+
+    width: 300px;
+    height: 70px;
+    background-color: white;
+
   }
 .borrowedBooksContainer{
 
@@ -186,6 +191,7 @@ margin-top: 30px;
 } */
 .borrowedBooks {
   margin-left: 30px;
+
 }
 
 .navitem {
@@ -290,10 +296,10 @@ background-color:#7678ed ;
   font-weight: bolder;
   border-color: #ffc300;
   cursor: pointer;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .borrowedBy-btn {
-  margin: 10px;
+  margin: 5px;
   padding: 10px;
   background-color: #3D348B;
   /* border-width: 0px; */
@@ -305,6 +311,7 @@ background-color:#7678ed ;
   border-color: #ffc300;
   cursor: pointer;
   text-decoration: none;
+  margin-top: 20px;
 
 }
 
@@ -336,6 +343,8 @@ background-color:#7678ed ;
   border-style: outset;
   border-width: 2px;
   border-color: rgb(107, 22, 193);
+  background-color: #fbfbfb;
+ 
 }
 .navbar-item {
   color: white;
@@ -440,4 +449,25 @@ background-color:#7678ed ;
   justify-content: space-around;
   row-gap: 30px;
   grid-template-columns: auto auto auto auto; */
+}/* width */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffc300;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #e8c142;
 }

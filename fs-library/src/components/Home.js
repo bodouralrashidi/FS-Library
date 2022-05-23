@@ -35,8 +35,18 @@ function Home() {
         />
         <h1 className="HomeTitle">Archive Library</h1>
       </div>
-      <div style={{ margin: "0px", position: "relative", bottom: "150px" }}>
+
+      <div style={{fontSize : "100px",display: "flex", marginBottom : "100px"}}>
+      <img   style={{width : "70px", height: "70px",  marginTop :"-70px" ,marginLeft :"70px" }} src = "https://cdn-icons-png.flaticon.com/512/56/56937.png"/>
+        <h1 style={{padding : "10px", textAlign : "center" , color: "#3D348B", fontWeight : "bolder"}}>
+        For glory lit, and life alive, for goals unreached and aims to strive. All men must try, it is the test, it is the dream.
+        </h1>
+        <img style={{width : "70px", height: "70px" , marginTop :"70px",marginRight :"70px" }} src = " https://cdn-icons-png.flaticon.com/512/2087/2087858.png"/>
+       
+      </div>
+      <div style={{ margin: "0px", bottom: "150px" }}>
         <h1
+        className="center"
           style={{
             margin: "30px",
             fontWeight: "bolder",

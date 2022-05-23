@@ -11,7 +11,8 @@ function BookItem(book) {
         height: "200px",
         marginTop: "20px",
         borderRadius: "10px",
-        border: "5px solid #ffc300",
+        margin : "20px",
+        boxShadow:" rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
       }}
       alt={BOOK.title}
     />
