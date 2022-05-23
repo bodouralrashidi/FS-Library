@@ -29,7 +29,11 @@ function BookInfo(props) {
   return (
     <div>
       <div class="BookInfo">
-        <div onClick={openModal} className={borrowClass}>
+        <div
+          onClick={openModal}
+          style={{ cursor: "pointer" }}
+          className={borrowClass}
+        >
           Return
         </div>
         <ReturnModal

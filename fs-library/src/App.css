@@ -160,6 +160,46 @@
   justify-content: center;
   font-size: 100px;
 }
+.initCircleGOLD {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  color: white;
+  background-color: gold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+.initCircleSILVER {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  color: white;
+  background-color: #7678ED;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+.initCirclePLATINUM {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  color: white;
+  background-color: #3D348B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
 .membership {
   display: flex;
   justify-content: center;
