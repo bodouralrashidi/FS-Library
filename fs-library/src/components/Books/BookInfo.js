@@ -3,7 +3,6 @@ import "../../App.css";
 import { Link } from "react-router-dom";
 import ReturnModal from "./ReturnModal";
 import { useState } from "react";
-import memberStore from "../../stores/MemberStore";
 import { observer } from "mobx-react";
 
 function BookInfo(props) {
@@ -24,11 +23,8 @@ function BookInfo(props) {
 
   let borrowClass = checkborrow();
   let BorrowMemberid = book.borrowedBy[book.borrowedBy.length - 1];
-
   const [isOpen, setIsOpen] = useState(false);
-
   const closeModal = () => setIsOpen(false);
-
   const openModal = () => setIsOpen(true);
   return (
     <div>
@@ -69,7 +65,6 @@ function BookInfo(props) {
           >
             {book.title}
           </h6>
-          {/* <h5 class="noMargin"> {book.author}</h5> */}
 
           {genres}
         </Link>

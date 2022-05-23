@@ -1,8 +1,6 @@
 import bookStore from "../../stores/BookStore";
 import BookItem from "./BookItem";
-import memberStore from "../../stores/MemberStore";
 
-//pass member from memberdetails call
 function Borrowedbooklist(member) {
   let MEMBER = member.member;
 

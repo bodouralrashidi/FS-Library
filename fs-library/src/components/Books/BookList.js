@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import bookStore from "../../stores/BookStore";
 import BookInfo from "./BookInfo";
 import { observer } from "mobx-react";
-import { Button } from "react-bootstrap";
 import AddBookModal from "./AddBookModal";
 
 function BookList() {
   const [isOpen, setIsOpen] = useState(false);
-
   const closeModal = () => setIsOpen(false);
-
   const openModal = () => setIsOpen(true);
   const [genre, setGenre] = useState("");
   const [query, setQuery] = useState("");
@@ -24,8 +21,7 @@ function BookList() {
 
   return (
     <div>
-      <div class="search-filter">
-        <div class="genre"></div>
+      <div>
         <input
           type="search"
           class="search"

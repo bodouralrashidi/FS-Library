@@ -1,5 +1,5 @@
 import axios from "axios";
-import { makeAutoObservable, observable, action } from "mobx";
+import { makeAutoObservable, action } from "mobx";
 import slugify from "react-slugify";
 
 class BooksStore {
@@ -27,14 +27,9 @@ class BooksStore {
 
 
   AddBook = async (book) => {
-    console.log("add book", book);
     book._id = this.books[this.books.length - 1].id + 1;
-
-
     book.slug = slugify(book.title, {delimiter : "-"});
-    console.log("slug:" + book.slug);
     this.books.push(book);
-    console.log("add book", book);
    
     try {
       const response = await axios.post(

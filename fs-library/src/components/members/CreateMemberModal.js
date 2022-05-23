@@ -1,7 +1,7 @@
 import { Modal, Button, InputGroup, Form } from "react-bootstrap";
 import React, { useState } from "react";
 import memberStore from "../../stores/MemberStore";
-// import { Modal, Button} from "react-bootstrap";
+
 
 function CreateMemberModal(props) {
   const [member, setMember] = useState({
@@ -23,7 +23,6 @@ function CreateMemberModal(props) {
   return (
     <div>
       <Modal
-        class="modalbody"
         centered
         show={props.isOpen}
         onHide={props.closeModal}
@@ -66,7 +65,6 @@ function CreateMemberModal(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          {/* variant="primary" */}
           <Button
             style={{ backgroundColor: "#FFC300", border: "0" }}
             onClick={handleSubmit}

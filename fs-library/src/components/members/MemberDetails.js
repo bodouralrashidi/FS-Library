@@ -5,23 +5,17 @@ import Borrowedbooklist from "./Borrowedbookslist";
 import { observer } from "mobx-react";
 
 function MemberDetails() {
-  // const trip = tripsData[0];
-
   const { memberSlug } = useParams();
-  //we put + before tripId in the following line to convert tripId from string to number
   const member = memberStore.members.find(
     (member) => member.slug === memberSlug
   );
   let bb = member.currentlyBorrowedBooks;
   if (!member) return <Navigate to="/" />;
   const fullName = `${member.firstName} ${member.lastName}`;
-  const membershipClass = `memberShipCircle${member.membership.toUpperCase()}`;
   const namecontainerClass = `nameContainer${member.membership.toUpperCase()}`;
 
-  //for testing (worked)
-  console.log("member id consoled " + memberSlug);
   return (
-    <div className="">
+    <div >
       <div
         className="MemberDetailsPage  "
         style={{

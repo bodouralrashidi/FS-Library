@@ -1,9 +1,5 @@
-// import { Modal, Button, InputGroup, Form } from "react-bootstrap";
-import React, { useState } from "react";
-import memberStore from "../../stores/MemberStore";
+import React from "react";
 
-// import { Modal, Button} from "react-bootstrap";
-//firsNameBorrowedBy
 function BorrowedByList(props) {
   let noDuplications = [...new Set(props.firstNameBorrowedBy)];
   const dropListMember = noDuplications.map((element) => (
@@ -11,7 +7,6 @@ function BorrowedByList(props) {
     </div>
    
   ));
-
   return (
     <div className="center">
       <div class="  scrollBorrow ">

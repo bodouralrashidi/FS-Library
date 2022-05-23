@@ -1,5 +1,4 @@
 import React from "react";
-import memberStore from "../../stores/MemberStore";
 import "../../App.css";
 import { Link } from "react-router-dom";
 
@@ -22,7 +21,7 @@ function MemberInfo(props) {
         </div>
         <div class="name-membership">
           <h4
-            class="noMargin infostyle"
+            class="noMargin"
             style={{
               textDecoration: "none",
               color: "#5B5B5B",

@@ -1,9 +1,6 @@
-import { Modal, Button, InputGroup, Form } from "react-bootstrap";
-import React, { useState } from "react";
+import { Modal, Button} from "react-bootstrap";
+import React from "react";
 import memberStore from "../../stores/MemberStore";
-import axios from "axios";
-import { render } from "@testing-library/react";
-import bookStore from "../../stores/BookStore";
 
 function ReturnModal(props) {
   let BOOK = props.book;
@@ -11,7 +8,6 @@ function ReturnModal(props) {
   let MEMBER = memberStore.members.filter(
     (member) => member._id == props.BorrowMemberid
   );
-  console.log("MEMBER info " + {});
 
   let membername = "";
   let index = 0;
@@ -25,15 +21,12 @@ function ReturnModal(props) {
 
     memberStore.returnbook(MEMBER[0], index, BOOK);
 
-    console.log("BOOK" + Object.entries(BOOK));
-
     props.closeModal();
   };
 
   return (
     <div>
       <Modal
-        class="modalbody"
         centered
         show={props.isOpen}
         onHide={props.closeModal}

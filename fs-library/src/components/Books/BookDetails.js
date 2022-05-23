@@ -1,15 +1,13 @@
 import BookStore from "../../stores/BookStore";
 import MemberStore from "../../stores/MemberStore";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import BorrowModal from "../Borrow/BorrowModal";
 import BorrowedByList from "./BorrowedByList";
 function BookDetails() {
   const [isOpen, setIsOpen] = useState(false);
-
   const closeModal = () => setIsOpen(false);
-
   const openModal = () => setIsOpen(true);
   const { bookSlug } = useParams();
 
@@ -18,11 +16,8 @@ function BookDetails() {
   const membersborrowed = () =>
     book.borrowedBy.map((id) => {
       MemberStore.members.forEach((member) => {
-        //console.log(member.firstName, "memeber name", id , "book borrwed by member")
         if (member._id === id) {
-          //console.log(member._id, "memeber id ")
           previousBorrowedMembers.push(member);
-          //console.log(member,"member")
         }
       });
     });
@@ -36,15 +31,6 @@ function BookDetails() {
   let firstNameBorrowedBy = previousBorrowedMembers.map(
     (member) => member.firstName + " " + member.lastName
   );
-  console.log("names" + firstNameBorrowedBy);
-  const scrollBorrow = previousBorrowedMembers.forEach((element) => {
-    <div>{element.firstName + " " + element.firstName} ddd</div>;
-  });
-  //console.log(previousBorrowedMembers[0].firstName, "previewos member")
-
-  //we put + before tripId in the following line to convert tripId from string to number
-
-  console.log("member id consoled " + book.available);
   return (
     <div className="center">
       <div className="center bookDetailsPage">
@@ -98,7 +84,6 @@ function BookDetails() {
             </Link>
           )}
           <BorrowedByList firstNameBorrowedBy={firstNameBorrowedBy} />
-          {/* {scrollBorrow} */}
         </div>
       </div>
     </div>

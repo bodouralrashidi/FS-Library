@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { Modal, Button, InputGroup, Form } from "react-bootstrap";
-
-import memberStore from "../../stores/MemberStore";
 import MemberList from "./MemberList";
 import CreateMemberModal from "./CreateMemberModal";
 
@@ -12,7 +9,7 @@ function MembersPage() {
 
   const openModal = () => setIsOpen(true);
   return (
-    <div class="memberPage">
+    <div>
       <center>
         <h1 style={{ color: "#7678ED" }}> Archive Library Members</h1>
         <MemberList />
