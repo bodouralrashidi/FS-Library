@@ -97,11 +97,8 @@ function BookDetails() {
               </h5>
             </Link>
           )}
-          <div className="borrowedBy-btn">
-          <h6 style={{color : "white"}}>       Member Who Borrowed Before </h6>
           <BorrowedByList firstNameBorrowedBy={firstNameBorrowedBy} />
           {/* {scrollBorrow} */}
-          </div>
         </div>
       </div>
     </div>

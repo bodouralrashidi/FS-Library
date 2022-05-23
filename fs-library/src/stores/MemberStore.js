@@ -57,8 +57,11 @@ class MemberStore {
       );
       bookStore.books.find((bok) => bok._id == bookId).available = false;
       this.members
-      .find((mem) => mem._id == memberId)
-      .currentlyBorrowedBooks.push(bookId);
+        .find((mem) => mem._id == memberId)
+        .currentlyBorrowedBooks.push(bookId);
+      bookStore.books
+        .find((bok) => bok._id == bookId)
+        .borrowedBy.push(memberId);
     } catch (error) {
       console.error(error);
     }

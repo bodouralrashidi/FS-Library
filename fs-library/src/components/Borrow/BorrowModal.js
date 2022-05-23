@@ -71,10 +71,12 @@ function BorrowModal(props) {
       }
     } else alert("The book is not available");
 
+    
     event.preventDefault();
 
     props.closeModal();
   };
+
 
   return (
     <div>
@@ -114,5 +116,7 @@ function BorrowModal(props) {
       </Modal>
     </div>
   );
+  
+
 }
 export default BorrowModal;
