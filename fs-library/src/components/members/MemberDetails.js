@@ -22,23 +22,31 @@ function MemberDetails() {
   console.log("member id consoled " + memberSlug);
   return (
     <div className="">
-    <div className="MemberDetailsPage  " style={{ padding: "10px" , borderStyle: "solid", margin: "20px", borderRadius: "20px" ,}}>
-      <div className={namecontainerClass}>
-        <div className="initCircle">
-          {member.firstName[0].toUpperCase()}
-          {member.lastName[0].toUpperCase()}
+      <div
+        className="MemberDetailsPage  "
+        style={{
+          padding: "10px",
+          borderStyle: "solid",
+          margin: "20px",
+          borderRadius: "20px",
+        }}
+      >
+        <div className={namecontainerClass}>
+          <div className="initCircle">
+            {member.firstName[0].toUpperCase()}
+            {member.lastName[0].toUpperCase()}
+          </div>
+          <h5 style={{ marginTop: "30px", fontWeight: "bold" }}>{fullName}</h5>
+          <div className="membership" style={{ marginTop: "15px" }}>
+            <h5 style={{ fontWeight: "bold" }}>{member.membership}</h5>
+            {/* <div className={membershipClass}></div> */}
+          </div>
         </div>
-        <h5 style={{ marginTop: "30px", fontWeight: "bold" }}>{fullName}</h5>
-        <div className="membership" style={{ marginTop: "15px" }}>
-          <h5 style={{ fontWeight: "bold" }}>{member.membership}</h5>
-          {/* <div className={membershipClass}></div> */}
+        <div className="borrowedBooks">
+          <h3 style={{ color: "black" }}>Currently Borrowed Books</h3>
+          <Borrowedbooklist member={member} />
         </div>
       </div>
-      <div className="borrowedBooks">
-        <h3 style={{ color: "black" }}>Currently Borrowed Books</h3>
-        <Borrowedbooklist member={member} />
-      </div>
-    </div>
     </div>
   );
 }

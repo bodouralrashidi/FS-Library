@@ -1,3 +1,16 @@
+
+.HomeTitle{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+    z-index: 2;
+    position: relative;
+    color: #ffffff;
+    text-shadow:1px 1px 10px #434343b9;
+    font-size: 140px;
+    left: 0px;
+    bottom: 245px;
+}
 .MemberDetailsPage {
   display: flex;
   background-color: #f1f1f1;

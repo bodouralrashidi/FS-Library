@@ -7,8 +7,7 @@ import memberStore from "../../stores/MemberStore";
 import { observer } from "mobx-react";
 
 function BookInfo(props) {
-  const [book, setBook] = useState(props.book);
-  // const book = props.book;
+  const book = props.book;
 
   const genres = () => {
     book.genres.forEach((element) => {
@@ -50,9 +49,12 @@ function BookInfo(props) {
           to={`/book-detail/${book.slug}`}
         >
           <img
-      
-            style={{ width: "150px", height: "200px", marginTop: "20px",   borderRadius: "10px"
-          }}
+            style={{
+              width: "150px",
+              height: "200px",
+              marginTop: "20px",
+              borderRadius: "0px",
+            }}
             src={book.image}
           />
           <h6

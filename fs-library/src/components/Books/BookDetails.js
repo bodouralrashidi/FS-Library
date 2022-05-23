@@ -2,11 +2,9 @@ import BookStore from "../../stores/BookStore";
 import MemberStore from "../../stores/MemberStore";
 import { useParams, Navigate } from "react-router-dom";
 import React, { useState } from "react";
-
 import { Link } from "react-router-dom";
 import BorrowModal from "../Borrow/BorrowModal";
-// import { ColorExtractor } from  'react-color-extractor'
-
+import BorrowedByList from "./BorrowedByList";
 function BookDetails() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -16,80 +14,91 @@ function BookDetails() {
   const { bookSlug } = useParams();
 
   const book = BookStore.books.find((book) => book.slug === bookSlug);
-  const previousBorrowedMembers = [];
+  let previousBorrowedMembers = [];
   const membersborrowed = () =>
     book.borrowedBy.map((id) => {
       MemberStore.members.forEach((member) => {
+        //console.log(member.firstName, "memeber name", id , "book borrwed by member")
         if (member._id === id) {
+          //console.log(member._id, "memeber id ")
           previousBorrowedMembers.push(member);
-          console.log(member, "member");
+          //console.log(member,"member")
         }
       });
     });
   const genres = book.genres.map((element) => (
     <span className="center genreBorder" value={element}>
-      {" "}
       {element}
     </span>
   ));
-  membersborrowed();
-  console.log("previous" + previousBorrowedMembers);
 
-  console.log(book.isAvailable, "tesst");
+  membersborrowed();
+  let firstNameBorrowedBy = previousBorrowedMembers.map(
+    (member) => member.firstName + " " + member.lastName
+  );
+  console.log("names" + firstNameBorrowedBy);
+  const scrollBorrow = previousBorrowedMembers.forEach((element) => {
+    <div>{element.firstName + " " + element.firstName} ddd</div>;
+  });
+  //console.log(previousBorrowedMembers[0].firstName, "previewos member")
+
   //we put + before tripId in the following line to convert tripId from string to number
 
-  console.log("member id consoled " + bookSlug);
+  console.log("member id consoled " + book.available);
   return (
     <div className="center">
       <div className="center bookDetailsPage">
-        <img className="imgwrap" src={book.image} />
+        <div style={{ width: "50%" }}>
+          <img className="imgwrap" src={book.image} />
+        </div>
 
-        {/* {colour} */}
-
-        <div style={{ padding: "40px" }}>
-          <h1
+        <div style={{ padding: "30px", width: "50%" }}>
+          <h2
             style={{
               textDecoration: "none",
-              color: "#FFC300",
+              color: "white",
               fontWeight: "bold",
             }}
           >
             {book.title}
-          </h1>
-          <h3>by {book.author}</h3>
+          </h2>
+          <h5 style={{ color: "white" }}>by {book.author}</h5>
 
-          {membersborrowed}
-          <span>{genres}</span>
-          {
-            book.available ? (
-              <button>
-                <span onClick={openModal}> Borrow book? </span>
-                <BorrowModal
-                  isOpen={isOpen}
-                  closeModal={closeModal}
-                  bookid={book._id}
-                  book={book}
-                />
-              </button>
-            ) : (
-              <Link
-                to={`/member-detail/${
+          <span className="gridGenre">{genres}</span>
+          {book.available || previousBorrowedMembers.length < 1 ? (
+            <button className="addBook-btn">
+              <span onClick={openModal}> Borrow book? </span>
+              <BorrowModal
+                isOpen={isOpen}
+                closeModal={closeModal}
+                bookid={book._id}
+                book={book}
+              />
+            </button>
+          ) : (
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "black",
+                backgroundColor: "White",
+                borderRadius: "20px",
+              }}
+              to={`/member-detail/${
+                previousBorrowedMembers[previousBorrowedMembers.length - 1].slug
+              }`}
+            >
+              <h5 className="borrowedBy-btn">
+                Borrowed By{" "}
+                {previousBorrowedMembers[previousBorrowedMembers.length - 1]
+                  .firstName +
+                  " " +
                   previousBorrowedMembers[previousBorrowedMembers.length - 1]
-                    .slug
-                }`}
-              >
-                <h4>
-                  borrowed by
-                  {previousBorrowedMembers[previousBorrowedMembers.length - 1]
-                    .firstName +
-                    " " +
-                    previousBorrowedMembers[previousBorrowedMembers.length - 1]
-                      .lastName}
-                </h4>
-              </Link>
-            )
-            //http://localhost:3001/member-detail/bodour-alrashidiii
-          }
+                    .lastName}{" "}
+              </h5>
+            </Link>
+          )}
+          <BorrowedByList firstNameBorrowedBy={firstNameBorrowedBy} />
+          {/* {scrollBorrow} */}
         </div>
       </div>
     </div>
