@@ -1,5 +1,9 @@
 .MemberDetailsPage {
   display: flex;
+  background-color: #f1f1f1;
+  border-style: solid ;
+  border-color: rgba(132, 129, 129, 0.24) ;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .borrowed{
   background-color: #3D348B;
@@ -29,6 +33,7 @@ justify-content: center;
   border-radius: 10px;
   padding-left: 5px;
   padding-right: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .bookPage{
 background-color: #f1f1f1;
@@ -39,14 +44,21 @@ padding-top:30px;
 margin-top: 30px;
 }
 .bookDetailsPage{
-  width: 50%;
+  width: 70%;
   height: 500px;;
-  background-color: #f1f1f1;
+  background-color:#3d348bff;
   border-radius: 10px;
   margin-left: 20px;
   margin-right: 20px;
   padding-top:30px;
   margin-top: 30px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(106, 26, 26, 0.09) 0px -3px 5px;  
+  }
+
+  .scrollBorrow{
+  
+    overflow: scroll;
+  
   }
 .borrowedBooksContainer{
 
@@ -69,7 +81,7 @@ margin-top: 30px;
   justify-content: space-around;
   grid-template-columns: auto auto auto auto;
   row-gap: 30px;
-  column-gap: 90px;
+  column-gap: 20px;
   border-radius: 10px;
 }
 
@@ -232,13 +244,29 @@ margin-top: 30px;
   align-items: flex-start;
 }
 .genreBorder {
+  margin: 5px;
+  color: white;
+  font-weight: bold;
+  padding-left: 7px;
+  padding-right: 7px;
+  width: fit-content;
   display:inline;
   border-radius: 20px;
-background-color: #ffc300;
+background-color:#7678ed ;
 
 
 }
+.gridGenre
+{
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 30px;
+}
 .addBook-btn {
+  margin: 10px;
   padding: 10px;
   background-color: #ffc300;
   /* border-width: 0px; */
@@ -246,9 +274,27 @@ background-color: #ffc300;
   border-style: groove;
   color: white;
   font-size: larger;
+  font-weight: bolder;
   border-color: #ffc300;
   cursor: pointer;
+  margin-top: 30px;
 }
+.borrowedBy-btn {
+  margin: 10px;
+  padding: 10px;
+  background-color: #3D348B;
+  /* border-width: 0px; */
+  border-radius: 5px;
+  border-style: groove;
+  color: white;
+  font-size: 15px;
+  font-weight: bolder;
+  border-color: #ffc300;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
 .center{
   display: flex;
   align-items: center;
@@ -263,6 +309,11 @@ background-color: #ffc300;
   width: 270px;
   height: auto; /* maintain aspect ratio*/
   margin: auto; /*optional centering of image*/
+  border-radius: 10px;
+
+ 
+  border: 5px solid rgb(255, 255, 255);
+ 
 }
 
 
@@ -276,6 +327,7 @@ background-color: #ffc300;
 .navbar-item {
   color: white;
   margin-right: 10px;
+  
 }
 .search {
   height: 30px;

@@ -59,12 +59,21 @@ function AddBookModal(props) {
 
   const handleCheckBox = (event) => {
     setBook({ ...book, [event.target.name]: event.target.value });
+   
   };
   const handleSubmit = (event) => {
+    console.log(book.genres.length< 1)
+   
+    
+
     console.log("The added book", book);
     book.genres = genresSelected;
+    
+    if ( book.genres.length < 1)
+   {book.genres.push("Fantasy")} 
+
     event.preventDefault();
-    bookStore.AddBook(book);
+   bookStore.AddBook(book)
     props.closeModal();
   };
   return (
