@@ -49,7 +49,9 @@ function BookInfo(props) {
           to={`/book-detail/${book.slug}`}
         >
           <img
-            style={{ width: "150px", height: "200px", marginTop: "20px" }}
+      
+            style={{ width: "150px", height: "200px", marginTop: "20px",   borderRadius: "10px"
+          }}
             src={book.image}
           />
           <h6

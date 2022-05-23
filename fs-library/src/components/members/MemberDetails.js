@@ -35,7 +35,7 @@ function MemberDetails() {
         </div>
       </div>
       <div className="borrowedBooks">
-        <h2 style={{ color: "#FFC300" }}>Currently Borrowed Books</h2>
+        <h3 style={{ color: "black" }}>Currently Borrowed Books</h3>
         <Borrowedbooklist member={member} />
       </div>
     </div>
