@@ -48,7 +48,7 @@ function AddBookModal(props) {
     available: true,
     borrowedBy: [],
     slug: "",
-    image: "",
+    image: "https://upittpress.org/wp-content/themes/pittspress/images/no_cover_available.png",
   });
   const handleChange = (event) => {
     setBook({ ...book, [event.target.name]: event.target.value });

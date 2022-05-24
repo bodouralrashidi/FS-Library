@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import logo from "C:/Users/HP/Development/FS-Library/fs-library/src/components/ArchiveLogo-removebg-preview.png";
 
 function Nav() {
   return (
@@ -18,6 +19,16 @@ function Nav() {
             }}
             to="/"
           >
+            <img
+              style={{
+                width: "45px",
+                height: "35px",
+                position: "relative",
+                bottom: "0px",
+                right: "5px",
+              }}
+              src={logo}
+            />
             Archive
           </NavLink>
         </div>
